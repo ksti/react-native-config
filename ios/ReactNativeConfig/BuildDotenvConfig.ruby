@@ -20,7 +20,7 @@ puts "Reading env from #{file}"
 
 dotenv = begin
   # https://regex101.com/r/cbm5Tp/1
-  dotenv_pattern = /^(?:export\s+|)(?<key>[[:alnum:]_]+)=((?<quote>["'])?(?<val>.*?[^\\])\k<quote>?|)$/
+  dotenv_pattern = /^(?:export\s+|)(?<key>[[:alnum:]_]+)\s*=\s*((?<quote>["'])?(?<val>.*?[^\\])\k<quote>?|)$/
 
   # find that above node_modules/react-native-config/ios/
   path = File.join(Dir.pwd, "../../../#{file}")
